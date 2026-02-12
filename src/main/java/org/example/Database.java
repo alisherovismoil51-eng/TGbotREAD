@@ -33,6 +33,7 @@ public class Database {
      public  String read(){
          StringBuilder result = new StringBuilder();
 
+
          try {
              Connection connection = DriverManager.getConnection(url , username , password);
 
@@ -57,6 +58,19 @@ public class Database {
            return result.toString();
      }
 
+
+     public  void  countUser(){
+         StringBuilder stringBuilder = new StringBuilder();
+         try {
+             Connection connection  = DriverManager.getConnection(url , username , password );
+             Statement statement  = connection.createStatement();
+
+              String query="sell count(chatid) from users ";
+              statement.executeQuery(query);
+         } catch (SQLException e) {
+             throw new RuntimeException(e);
+         }
+     }
 }
 
 
