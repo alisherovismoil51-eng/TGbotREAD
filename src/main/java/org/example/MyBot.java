@@ -20,6 +20,9 @@ public class MyBot extends TelegramLongPollingBot {
             if (text.equals("/start")) {
                 Users users = new Users(chatId, firstName, lastName);
 
+
+
+
                 Database database = new Database();
                 database.create(users);
                 SendMessage sendMessage = new SendMessage();
